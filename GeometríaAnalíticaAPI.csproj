@@ -8,7 +8,7 @@
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>GeometríaAnalíticaAPI</RootNamespace>
-    <AssemblyName>GeometríaAnalíticaAPI04</AssemblyName>
+    <AssemblyName>GeometríaAnalíticaAPI05</AssemblyName>
     <TargetFrameworkVersion>v4.8.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
@@ -90,6 +90,7 @@
   <ItemGroup>
     <Compile Include="Ejemplo AP01-02-Cmd.cs" />
     <Compile Include="Ejemplo AP01-01-Cmd.cs" />
+    <Compile Include="Ejemplo AP05-01-Cmd.cs" />
     <Compile Include="Ejemplo AP04-01-Cmd.cs" />
     <Compile Include="Ejemplo08-01-Cmd.cs" />
     <Compile Include="Ejemplo07-02-Cmd.cs" />

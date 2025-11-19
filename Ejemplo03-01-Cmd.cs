@@ -23,7 +23,7 @@ namespace ComandosNuevosAndy
         {
             // Obtienemos una Instancia del Documento y Solicita el acceso a un Documento activo de AutoCAD
             Document acDoc = Autodesk.AutoCAD.ApplicationServices.Application.DocumentManager.MdiActiveDocument;
-            // Obtienemos una Instancia de la Base de Datos y Solicita el acceso a la Base de Datos de AutoCAD
+            // Obtenemos una Instancia de la Base de Datos y Solicita el acceso a la Base de Datos de AutoCAD
             Database acCurDb = acDoc.Database;
             // Solicita el acceso al Editor de AutoCAD
             Editor acEditor = acDoc.Editor;

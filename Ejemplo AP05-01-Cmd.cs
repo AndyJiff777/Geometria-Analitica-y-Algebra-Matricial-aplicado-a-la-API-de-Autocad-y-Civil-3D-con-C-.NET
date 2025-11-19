@@ -12,17 +12,17 @@ using System;
 
 namespace ComandosNuevosAndy
 {
-    public class NombreComandoEjemploAP04
+    public class NombreComandoEjemploAP05
     {
         // Creación del nombre del comando nuevo para AutoCAD
-        [CommandMethod("ACL_AP04")]
+        [CommandMethod("ACL_AP05")]
         // Creamos un Public Void para crear un Comando Nuevo en AutoCAD
         // Cada Public void, es un comando separado de AutoCAD
-        public void ACL_AP04()
+        public void ACL_AP05()
         {
-            // Obtienemos una Instancia del Documento y Solicita el acceso a un Documento activo de AutoCAD
+            // Obtenemos una Instancia del Documento y Solicita el acceso a un Documento activo de AutoCAD
             Document acDoc = Autodesk.AutoCAD.ApplicationServices.Application.DocumentManager.MdiActiveDocument;
-            // Obtienemos una Instancia de la Base de Datos y Solicita el acceso a la Base de Datos de AutoCAD
+            // Obtenemos una Instancia de la Base de Datos y Solicita el acceso a la Base de Datos de AutoCAD
             Database acCurDb = acDoc.Database;
             // Solicita el acceso al Editor de AutoCAD
             Editor acEditor = acDoc.Editor;
@@ -82,45 +82,7 @@ namespace ComandosNuevosAndy
                         }
                         if (acDistancia.Status==PromptStatus.OK)
                         {
-                            // (1) Crear el vector AB
-                            Vector3d vectorAB= acPuntoB.Value - acPuntoA.Value;
-                            double xD = vectorAB.X;
-                            double yD = vectorAB.Y;
-
-                            // (2) Hallar la longitud del vector AB
-                            double magnitudAB = Math.Sqrt(xD*xD+yD*yD);
-
-                            // (3) Crear el vector unitario uAB
-                            double uX = xD/magnitudAB;
-                            double uY = yD/magnitudAB;
-
-                            // (4) Calcular las coordenadas del punto P
-                            double xP = acPuntoB.Value.X + uX * acDistancia.Value;
-                            double yP = acPuntoB.Value.Y + uY * acDistancia.Value;
-                            Point3d puntoP = new Point3d(xP, yP, 0);
-
-                            // Agregar los objetos al espacio modelo
-                            // Crear la línea desde el punto A hasta el punto B
-                            Line lineaAB = new Line(acPuntoA.Value, acPuntoB.Value);
-                            lineaAB.Color = Color.FromColorIndex(ColorMethod.ByAci, 10); // Color rojo
-                            acBlkTblRec.AppendEntity(lineaAB);
-                            acTrans.AddNewlyCreatedDBObject(lineaAB, true);
-                            // Crear el punto A, B y P
-                            DBPoint puntoDBA = new DBPoint(acPuntoA.Value);
-                            puntoDBA.Color = Color.FromColorIndex(ColorMethod.ByAci, 10); // Color rojo
-                            acBlkTblRec.AppendEntity(puntoDBA);
-                            acTrans.AddNewlyCreatedDBObject(puntoDBA, true);
-                            DBPoint puntoDBB = new DBPoint(acPuntoB.Value);
-                            puntoDBB.Color = Color.FromColorIndex(ColorMethod.ByAci, 10); // Color rojo
-                            acBlkTblRec.AppendEntity(puntoDBB);
-                            acTrans.AddNewlyCreatedDBObject(puntoDBB, true);
-                            DBPoint puntoDBP = new DBPoint(puntoP);
-                            puntoDBP.ColorIndex = 5; // Color azul
-                            acBlkTblRec.AppendEntity(puntoDBP);
-                            acTrans.AddNewlyCreatedDBObject(puntoDBP, true);
-
-                            // Mensajes en la línea de comandos de AutoCAD
-                            acEditor.WriteMessage($"\n---> Punto P creado con una distancia: {acDistancia.Value}; resultando las coordenadas: X: {xP} | Y: {yP}");
+                            
                         }
                     }
                 }

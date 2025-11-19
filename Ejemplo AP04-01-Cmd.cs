@@ -20,9 +20,9 @@ namespace ComandosNuevosAndy
         // Cada Public void, es un comando separado de AutoCAD
         public void ACL_AP04()
         {
-            // Obtienemos una Instancia del Documento y Solicita el acceso a un Documento activo de AutoCAD
+            // Obtenemos una Instancia del Documento y Solicita el acceso a un Documento activo de AutoCAD
             Document acDoc = Autodesk.AutoCAD.ApplicationServices.Application.DocumentManager.MdiActiveDocument;
-            // Obtienemos una Instancia de la Base de Datos y Solicita el acceso a la Base de Datos de AutoCAD
+            // Obtenemos una Instancia de la Base de Datos y Solicita el acceso a la Base de Datos de AutoCAD
             Database acCurDb = acDoc.Database;
             // Solicita el acceso al Editor de AutoCAD
             Editor acEditor = acDoc.Editor;
@@ -67,7 +67,7 @@ namespace ComandosNuevosAndy
                     if (acPuntoB.Status==PromptStatus.OK)
                     {
                         // En este espacio se procede a crear los objetos de AutoCAD
-                        PromptDistanceOptions optsDistancia = new PromptDistanceOptions("\n---> Ingresa la distancia para el puntp P: ");
+                        PromptDistanceOptions optsDistancia = new PromptDistanceOptions("\n---> Ingresa la distancia para el punto P: ");
                         optsDistancia.AllowNone = false;
                         optsDistancia.UseDefaultValue = true;
                         PromptDoubleResult acDistancia = acEditor.GetDistance(optsDistancia);
